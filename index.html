@@ -3,125 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Chandan Kumar — Data Analyst Portfolio featuring Python, SQL, Data Analytics, Machine Learning, Computer Vision and interactive analytics projects.">
+<meta name="description" content="Chandan Kumar — Data Analyst Portfolio">
 <meta name="theme-color" content="#07111f">
 <title>Chandan Kumar | Data Analyst</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 :root{
-  --bg:#050b14;--bg2:#081321;--card:rgba(10,23,39,.82);
-  --text:#f5f7fb;--muted:#9eafc2;--primary:#38bdf8;--secondary:#818cf8;
-  --cyan:#67e8f9;--border:rgba(255,255,255,.10);--shadow:0 24px 80px rgba(0,0,0,.28)
+  --bg:#07111f;--bg2:#0b1728;--card:rgba(15,29,49,.82);
+  --text:#f5f7fb;--muted:#aab7c8;--primary:#38bdf8;--secondary:#818cf8;
+  --border:rgba(255,255,255,.1)
 }
-body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
+body{
+  font-family:Arial,Helvetica,sans-serif;background:
+  radial-gradient(circle at 15% 15%,rgba(56,189,248,.12),transparent 28%),
+  radial-gradient(circle at 85% 75%,rgba(129,140,248,.12),transparent 30%),var(--bg);
+  color:var(--text);line-height:1.6;overflow-x:hidden
+}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .container{width:min(1180px,92%);margin:auto}
-.background{position:fixed;inset:0;overflow:hidden;z-index:-2;background:radial-gradient(circle at 15% 15%,rgba(56,189,248,.10),transparent 27%),radial-gradient(circle at 85% 75%,rgba(129,140,248,.10),transparent 30%),#050b14}
-.orb{position:absolute;width:230px;height:230px;border-radius:50%;filter:blur(75px);opacity:.30;animation:float 14s infinite ease-in-out}
-.orb.one{background:#0ea5e9;top:8%;left:4%}.orb.two{background:#6366f1;right:3%;bottom:4%;animation-delay:-6s}
-@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(70px,-45px) scale(1.12)}}
-header{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);background:rgba(5,11,20,.76);border-bottom:1px solid var(--border)}
+header{position:sticky;top:0;z-index:1000;background:rgba(7,17,31,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 nav{min-height:70px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:22px;font-weight:900;letter-spacing:.04em}.logo span{color:var(--primary)}
-.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{color:var(--muted);transition:.25s}.nav-links a:hover{color:#fff}
-.menu{display:none;border:0;background:none;color:#fff;font-size:28px;cursor:pointer}
-.hero{min-height:88vh;display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center;padding:80px 0}
-.badge{display:inline-flex;align-items:center;gap:8px;color:var(--cyan);border:1px solid rgba(56,189,248,.28);background:rgba(56,189,248,.07);padding:8px 14px;border-radius:999px;font-size:13px;margin-bottom:20px}
-.status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 12px #4ade80}
-h1{font-size:clamp(42px,7vw,78px);line-height:1.03;margin-bottom:20px}h1 span{background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;color:transparent}
-.hero-text{color:var(--muted);font-size:18px;max-width:680px;margin-bottom:28px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 20px;border-radius:11px;font-weight:800;transition:.25s;cursor:pointer}.btn:hover{transform:translateY(-3px)}
+.logo{font-size:25px;font-weight:900}.logo span{color:var(--primary)}
+.nav-links{display:flex;gap:25px;list-style:none}.nav-links a{color:var(--muted);font-size:15px;transition:.25s}.nav-links a:hover{color:var(--primary)}
+.menu{display:none;background:none;border:0;color:#fff;font-size:28px}
+section{padding:90px 0}
+.hero{min-height:88vh;display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding:80px 0}
+.badge{display:inline-block;color:var(--primary);background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.3);padding:8px 14px;border-radius:30px;font-size:13px;margin-bottom:20px}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.05;margin-bottom:20px}
+h1 span{background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-text{color:var(--muted);font-size:18px;max-width:680px;margin-bottom:30px}
+.buttons,.project-buttons,.socials{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 20px;border-radius:10px;font-weight:700;transition:.3s}
 .primary{background:linear-gradient(90deg,#0ea5e9,#6366f1);color:#fff}.secondary{border:1px solid var(--border);background:rgba(255,255,255,.04)}
-.profile-card{position:relative;text-align:center;background:linear-gradient(145deg,rgba(15,29,49,.90),rgba(7,16,29,.80));border:1px solid var(--border);border-radius:26px;padding:25px;backdrop-filter:blur(16px);box-shadow:var(--shadow)}
-.profile-card:before{content:"";position:absolute;inset:-1px;border-radius:26px;background:linear-gradient(135deg,rgba(56,189,248,.35),transparent 45%,rgba(129,140,248,.25));z-index:-1}
-.profile-card img{width:230px;height:270px;object-fit:cover;border-radius:20px;border:2px solid rgba(56,189,248,.45);margin:0 auto 15px}.profile-card p{color:var(--muted)}
-section{padding:90px 0}.section-title{margin-bottom:38px}.section-title small{color:var(--primary);text-transform:uppercase;letter-spacing:2px}.section-title h2{font-size:clamp(30px,4vw,42px);margin-top:5px}.about{max-width:880px;color:var(--muted);font-size:17px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.mini-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px}.mini-card strong{display:block;font-size:18px;margin-bottom:6px}.mini-card p{color:var(--muted)}
-/* 3D technologies */
-.tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.tech-card{min-height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:linear-gradient(145deg,rgba(16,31,51,.9),rgba(7,17,29,.9));border:1px solid var(--border);border-radius:18px;box-shadow:0 14px 30px rgba(0,0,0,.22);transform-style:preserve-3d;transition:transform .3s,border-color .3s,box-shadow .3s}
-.tech-card:hover{transform:perspective(700px) rotateX(6deg) rotateY(-7deg) translateY(-7px);border-color:rgba(56,189,248,.48);box-shadow:0 22px 45px rgba(0,0,0,.35),0 0 25px rgba(56,189,248,.08)}
-.tech-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.15);font-size:24px;transform:translateZ(20px)}
-.tech-name{font-size:13px;font-weight:800;color:#e8f5ff}.tech-type{font-size:10px;color:#71869b;letter-spacing:.08em;text-transform:uppercase}
-/* projects */
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.project{background:linear-gradient(145deg,rgba(15,29,49,.86),rgba(7,16,29,.86));border:1px solid var(--border);border-radius:22px;padding:20px;transition:.35s;overflow:hidden}
-.project:hover{transform:translateY(-7px);border-color:rgba(56,189,248,.38);box-shadow:var(--shadow)}
-.featured{border-color:rgba(56,189,248,.28);box-shadow:0 15px 50px rgba(56,189,248,.06)}
-.project-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.project-number{color:var(--primary);font-weight:900;font-size:13px}.featured-badge{font-size:10px;color:#a5f3fc;border:1px solid rgba(103,232,249,.25);background:rgba(103,232,249,.07);padding:5px 9px;border-radius:999px;letter-spacing:.08em}
-.gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;margin:15px 0 18px;height:260px}.gallery img{width:100%;height:100%;object-fit:cover;border-radius:13px;border:1px solid var(--border);background:#0b1625;cursor:pointer;transition:.25s}.gallery img:first-child{grid-row:1/3}.gallery img:hover{transform:scale(1.02);border-color:rgba(56,189,248,.45)}
-.project h3{margin:5px 0 8px;font-size:23px}.project p{color:var(--muted);font-size:14px;margin-bottom:15px}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:17px}.tag{font-size:11px;padding:5px 9px;border-radius:20px;background:rgba(255,255,255,.06);color:#dbeafe;border:1px solid rgba(255,255,255,.05)}
-.project-buttons{display:flex;flex-wrap:wrap;gap:9px}.project-link{display:inline-flex;align-items:center;justify-content:center;padding:9px 13px;border-radius:9px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.20);color:var(--primary);font-weight:800;font-size:12px}.project-link:hover{background:rgba(56,189,248,.16)}
-/* education/contact */
-.education{border-left:2px solid rgba(56,189,248,.4);padding-left:25px}.edu-item{margin-bottom:25px}.edu-year{color:var(--primary);font-weight:bold}.edu-item h3{margin:4px 0}.edu-item p{color:var(--muted)}
-.contact-box{text-align:center;padding:45px 25px;border-radius:22px;background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(99,102,241,.08));border:1px solid var(--border)}
-.contact-box p{color:var(--muted);margin:12px auto 25px;max-width:650px}.socials{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-.query-form{max-width:780px;margin:25px auto 0;text-align:left;display:grid;gap:13px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}.query-form input,.query-form textarea{width:100%;border:1px solid var(--border);background:rgba(4,11,20,.72);color:#fff;border-radius:11px;padding:13px;outline:none}.query-form input:focus,.query-form textarea:focus{border-color:rgba(56,189,248,.55);box-shadow:0 0 0 3px rgba(56,189,248,.08)}.query-form textarea{min-height:140px;resize:vertical}.form-status{display:none;margin-top:4px;color:#86efac;font-size:13px}
+.btn:hover,.project:hover,.edu-item:hover{transform:translateY(-4px)}
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:25px;padding:25px;text-align:center;box-shadow:0 20px 70px rgba(0,0,0,.28)}
+.profile-card img{width:230px;height:270px;object-fit:cover;border-radius:20px;border:2px solid rgba(56,189,248,.5);margin:0 auto 15px}
+.profile-card p,.about,.project p,.edu-item p,.contact-box p{color:var(--muted)}
+.section-title{margin-bottom:40px}.section-title small{color:var(--primary);text-transform:uppercase;letter-spacing:2px;font-weight:700}.section-title h2{font-size:38px;margin-top:5px}
+.about{max-width:900px;font-size:17px}
+
+.tech-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;perspective:1200px}
+.tech-card{min-height:145px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:18px;background:linear-gradient(145deg,rgba(20,38,62,.92),rgba(8,19,34,.95));border:1px solid var(--border);border-radius:18px;transform-style:preserve-3d;transition:.4s}
+.tech-card:hover{transform:translateY(-10px) rotateX(5deg) rotateY(-5deg);border-color:rgba(56,189,248,.45);box-shadow:0 20px 45px rgba(0,0,0,.35)}
+.tech-icon{font-size:46px;margin-bottom:10px;color:var(--primary)}.tech-name{font-size:14px;font-weight:800}.tech-type{color:#7890a7;font-size:11px;margin-top:4px}
+
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}
+.project{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:18px;overflow:hidden;transition:.35s}
+.project:hover{border-color:rgba(56,189,248,.4);box-shadow:0 20px 55px rgba(0,0,0,.25)}
+.project-number{color:var(--primary);font-weight:800;font-size:14px;margin-bottom:8px}.project h3{font-size:23px;margin:7px 0 10px}
+.project-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.project-gallery a{overflow:hidden;border-radius:12px;background:#0b1625;border:1px solid rgba(255,255,255,.08)}
+.project-gallery img{width:100%;height:125px;object-fit:cover;transition:.4s}.project-gallery a:hover img{transform:scale(1.08)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}.tag{font-size:12px;padding:5px 9px;border-radius:20px;background:rgba(255,255,255,.07);color:#dbeafe}
+.project-link{display:inline-block;padding:9px 13px;border-radius:8px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);color:var(--primary);font-weight:700;font-size:13px;transition:.3s}
+.project-link:hover{background:rgba(56,189,248,.18)}.disabled{color:#778598;background:rgba(255,255,255,.03);border-color:var(--border)}
+
+.education{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.edu-item{position:relative;padding:28px 22px;background:var(--card);border:1px solid var(--border);border-radius:20px;text-align:center;overflow:hidden;transition:.35s}
+.edu-logo{width:90px;height:90px;object-fit:contain;border-radius:18px;background:#fff;padding:8px;margin:0 auto 18px}
+.edu-year{color:var(--primary);font-size:13px;font-weight:800;letter-spacing:1px}.edu-level{color:#d9f3ff;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin:8px 0}
+.edu-item h3{font-size:20px;line-height:1.3;margin:5px 0 10px}
+
+.query-box,.contact-box{max-width:850px;margin:auto;padding:35px;border-radius:22px;background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(99,102,241,.08));border:1px solid var(--border)}
+.query-form{display:grid;gap:16px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-group{display:flex;flex-direction:column;gap:7px}
+.form-group label{font-size:13px;font-weight:700}.form-group input,.form-group textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(3,11,21,.65);color:#fff;outline:0}
+.form-group textarea{min-height:130px;resize:vertical}.form-group input:focus,.form-group textarea:focus{border-color:var(--primary)}
+.query-note{color:#788ca0;font-size:12px}.contact-box{text-align:center}.contact-box p{margin:12px auto 25px;max-width:650px}
+.socials{justify-content:center}.phone-note{margin-top:25px;color:#94a3b8;font-size:14px}
 footer{text-align:center;padding:30px;color:#718096;border-top:1px solid var(--border)}
-/* modal */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px;z-index:999}.modal.open{display:flex}.modal img{max-width:min(1100px,95vw);max-height:90vh;object-fit:contain;border-radius:15px;border:1px solid var(--border)}.close{position:absolute;top:18px;right:25px;font-size:34px;color:#fff;cursor:pointer}
-/* responsive */
+
 @media(max-width:1050px){.tech-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:850px){
- .hero{grid-template-columns:1fr;text-align:center;padding:65px 0}.hero-text{margin-left:auto;margin-right:auto}.buttons{justify-content:center}.profile-card{max-width:400px;margin:auto}
- .projects{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr}
- .tech-grid{grid-template-columns:repeat(3,1fr)}
- .nav-links{display:none;position:absolute;top:70px;left:0;width:100%;padding:18px;flex-direction:column;background:#091525;border-bottom:1px solid var(--border);text-align:center}.nav-links.active{display:flex}.menu{display:block}
- section{padding:65px 0}
+  .hero{grid-template-columns:1fr;text-align:center}.hero-text{margin:auto auto 30px}.buttons{justify-content:center}
+  .profile-card{max-width:400px;margin:auto}.projects,.education{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(3,1fr)}
+  .menu{display:block}.nav-links{display:none;position:absolute;top:70px;left:0;width:100%;padding:20px;flex-direction:column;background:#091525;border-bottom:1px solid var(--border);text-align:center}
+  .nav-links.active{display:flex}section{padding:65px 0}
 }
-@media(max-width:560px){
- .container{width:min(94%,500px)}h1{font-size:43px}.hero-text{font-size:16px}.profile-card img{width:190px;height:225px}
- .section-title h2{font-size:30px}.tech-grid{grid-template-columns:repeat(2,1fr);gap:10px}.tech-card{min-height:115px}.gallery{height:225px}
- .form-row{grid-template-columns:1fr}.project-buttons{flex-direction:column}.project-link,.btn{width:100%}
+@media(max-width:600px){
+  .container{width:94%}.section-title h2{font-size:30px}.tech-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .tech-card{min-height:125px}.project-gallery img{height:100px}.form-row{grid-template-columns:1fr}.query-box{padding:22px 17px}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:480px){
+  h1{font-size:43px}.hero-text{font-size:16px}.profile-card img{width:190px;height:225px}
+  .project{padding:15px}.project-gallery{gap:5px}.project-gallery img{height:82px}.project-buttons{flex-direction:column}
+  .project-link{text-align:center}.tech-grid{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 
 <body>
-<div class="background"><div class="orb one"></div><div class="orb two"></div></div>
 
 <header>
 <nav class="container">
 <a href="#home" class="logo">CK<span>.</span></a>
-<button class="menu" onclick="toggleMenu()" aria-label="Open navigation menu">☰</button>
+<button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
 <ul class="nav-links" id="navLinks">
-<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#query">Query</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
 </header>
 
 <main>
+
 <section id="home">
 <div class="container hero">
 <div>
-<div class="badge"><span class="status-dot"></span> OPEN TO DATA ANALYST OPPORTUNITIES</div>
+<div class="badge">MCA GRADUATE • DATA ANALYST</div>
 <h1>Hi, I'm <span>Chandan Kumar</span></h1>
-<p class="hero-text">Data Analyst focused on Python, SQL, data visualization and practical analytics — with additional experience building Machine Learning and Computer Vision solutions.</p>
+<p class="hero-text">I enjoy working with Python, SQL, Data Analytics, Machine Learning and Computer Vision to turn data and ideas into practical solutions.</p>
 <div class="buttons">
-<a href="#projects" class="btn primary">View My Projects ↓</a>
-<a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn secondary">View Resume ↗</a>
+<a href="#projects" class="btn primary">View My Projects</a>
 <a href="#contact" class="btn secondary">Let's Connect</a>
 </div>
 </div>
 <div class="profile-card">
 <img src="profile.jpg" alt="Chandan Kumar">
-<h3>Chandan Kumar</h3><p>Data Analyst • Python • SQL • Analytics</p>
+<h3>Chandan Kumar</h3>
+<p>Data Analyst • Python • SQL • Analytics</p>
 </div>
 </div>
 </section>
 
 <section id="about">
 <div class="container">
-<div class="section-title"><small>About Me</small><h2>Turning data into useful decisions.</h2></div>
-<div class="about-grid">
-<div class="mini-card"><strong>📊 Data Analytics</strong><p>I enjoy cleaning, exploring and visualizing data to identify patterns, trends and business insights.</p></div>
-<div class="mini-card"><strong>🤖 AI / Computer Vision</strong><p>I also build practical ML and computer-vision projects that turn technical ideas into working applications.</p></div>
-</div>
+<div class="section-title"><small>About Me</small><h2>A curious learner who likes solving problems with data.</h2></div>
+<div class="about">
+<p>I'm an MCA graduate with a strong interest in Data Analytics, Machine Learning and Artificial Intelligence. I enjoy working with data, understanding patterns and using technology to solve practical problems.</p>
 <br>
-<p class="about">I'm an MCA graduate with hands-on experience in Python and SQL and a growing portfolio across analytics, visualization, machine learning and computer vision. I focus on building projects that are understandable, useful and deployable.</p>
+<p>I have hands-on experience with Python and SQL and have worked with Pandas, NumPy, Matplotlib, Scikit-Learn, TensorFlow, Keras, OpenCV, MediaPipe, Streamlit, Plotly and GitHub.</p>
+</div>
 </div>
 </section>
 
@@ -129,111 +148,109 @@ footer{text-align:center;padding:30px;color:#718096;border-top:1px solid var(--b
 <div class="container">
 <div class="section-title"><small>Technical Skills</small><h2>Tools & Technologies</h2></div>
 <div class="tech-grid">
-<div class="tech-card"><div class="tech-icon">🐍</div><div class="tech-name">Python</div><div class="tech-type">Language</div></div>
-<div class="tech-card"><div class="tech-icon">🗄️</div><div class="tech-name">SQL</div><div class="tech-type">Database</div></div>
-<div class="tech-card"><div class="tech-icon">📊</div><div class="tech-name">Power BI</div><div class="tech-type">BI</div></div>
-<div class="tech-card"><div class="tech-icon">📗</div><div class="tech-name">Excel</div><div class="tech-type">Analytics</div></div>
-<div class="tech-card"><div class="tech-icon">🐼</div><div class="tech-name">Pandas</div><div class="tech-type">Data</div></div>
-<div class="tech-card"><div class="tech-icon">🔢</div><div class="tech-name">NumPy</div><div class="tech-type">Computing</div></div>
-<div class="tech-card"><div class="tech-icon">📈</div><div class="tech-name">Matplotlib</div><div class="tech-type">Visualization</div></div>
-<div class="tech-card"><div class="tech-icon">📉</div><div class="tech-name">Seaborn</div><div class="tech-type">Visualization</div></div>
-<div class="tech-card"><div class="tech-icon">✨</div><div class="tech-name">Plotly</div><div class="tech-type">Interactive</div></div>
-<div class="tech-card"><div class="tech-icon">🚀</div><div class="tech-name">Streamlit</div><div class="tech-type">Apps</div></div>
-<div class="tech-card"><div class="tech-icon">🧠</div><div class="tech-name">Scikit-learn</div><div class="tech-type">ML</div></div>
-<div class="tech-card"><div class="tech-icon">🔬</div><div class="tech-name">TensorFlow</div><div class="tech-type">AI</div></div>
-<div class="tech-card"><div class="tech-icon">🧩</div><div class="tech-name">Keras</div><div class="tech-type">Deep Learning</div></div>
-<div class="tech-card"><div class="tech-icon">👁️</div><div class="tech-name">OpenCV</div><div class="tech-type">Vision</div></div>
-<div class="tech-card"><div class="tech-icon">📐</div><div class="tech-name">MediaPipe</div><div class="tech-type">Vision</div></div>
-<div class="tech-card"><div class="tech-icon">🐙</div><div class="tech-name">GitHub</div><div class="tech-type">Version Control</div></div>
+<div class="tech-card"><i class="devicon-python-plain tech-icon"></i><div class="tech-name">Python</div><div class="tech-type">Programming</div></div>
+<div class="tech-card"><i class="devicon-mysql-plain tech-icon"></i><div class="tech-name">SQL</div><div class="tech-type">Database</div></div>
+<div class="tech-card"><i class="devicon-pandas-plain tech-icon"></i><div class="tech-name">Pandas</div><div class="tech-type">Data Analysis</div></div>
+<div class="tech-card"><i class="devicon-numpy-plain tech-icon"></i><div class="tech-name">NumPy</div><div class="tech-type">Data Science</div></div>
+<div class="tech-card"><i class="devicon-matplotlib-plain tech-icon"></i><div class="tech-name">Matplotlib</div><div class="tech-type">Visualization</div></div>
+<div class="tech-card"><i class="devicon-scikitlearn-plain tech-icon"></i><div class="tech-name">Scikit-Learn</div><div class="tech-type">Machine Learning</div></div>
+<div class="tech-card"><i class="devicon-tensorflow-original tech-icon"></i><div class="tech-name">TensorFlow</div><div class="tech-type">Deep Learning</div></div>
+<div class="tech-card"><i class="devicon-keras-plain tech-icon"></i><div class="tech-name">Keras</div><div class="tech-type">Deep Learning</div></div>
+<div class="tech-card"><i class="devicon-opencv-plain tech-icon"></i><div class="tech-name">OpenCV</div><div class="tech-type">Computer Vision</div></div>
+<div class="tech-card"><i class="devicon-git-plain tech-icon"></i><div class="tech-name">Git</div><div class="tech-type">Version Control</div></div>
+<div class="tech-card"><i class="devicon-github-original tech-icon"></i><div class="tech-name">GitHub</div><div class="tech-type">Development</div></div>
+<div class="tech-card"><i class="devicon-vscode-plain tech-icon"></i><div class="tech-name">VS Code</div><div class="tech-type">Development</div></div>
+<div class="tech-card"><i class="devicon-flask-original tech-icon"></i><div class="tech-name">Flask</div><div class="tech-type">Web Development</div></div>
+<div class="tech-card"><i class="devicon-html5-plain tech-icon"></i><div class="tech-name">HTML5</div><div class="tech-type">Web</div></div>
+<div class="tech-card"><i class="devicon-css3-plain tech-icon"></i><div class="tech-name">CSS3</div><div class="tech-type">Web</div></div>
+<div class="tech-card"><i class="devicon-javascript-plain tech-icon"></i><div class="tech-name">JavaScript</div><div class="tech-type">Web</div></div>
 </div>
 </div>
 </section>
 
 <section id="projects">
 <div class="container">
-<div class="section-title"><small>Selected Projects</small><h2>Featured Work</h2></div>
+<div class="section-title"><small>Selected Projects</small><h2>Things I've Built</h2></div>
 <div class="projects">
 
-<!-- 01 -->
-<article class="project featured">
-<div class="project-head"><div class="project-number">01</div><div class="featured-badge">★ FEATURED</div></div>
-<div class="gallery">
-<img src="images/global-crop-1.png" alt="Global Crop Intelligence dashboard" onclick="openImage(this.src)">
-<img src="images/global-crop-2.png" alt="Global Crop Intelligence map" onclick="openImage(this.src)">
-<img src="images/global-crop-3.png" alt="Global Crop Intelligence analytics" onclick="openImage(this.src)">
+<article class="project">
+<div class="project-number">01</div>
+<div class="project-gallery">
+<a href="images/global-crop-1.png" target="_blank"><img src="images/global-crop-1.png" alt="Global Crop Intelligence screenshot 1"></a>
+<a href="images/global-crop-2.png" target="_blank"><img src="images/global-crop-2.png" alt="Global Crop Intelligence screenshot 2"></a>
+<a href="images/global-crop-3.png" target="_blank"><img src="images/global-crop-3.png" alt="Global Crop Intelligence screenshot 3"></a>
 </div>
-<h3>🌍 Global Crop Intelligence</h3>
-<p>A premium agricultural intelligence dashboard combining interactive country mapping, growth, yield, trade, supply, concentration, volatility, forecasting, search, filtering, downloads and data provenance.</p>
+<h3>Global Crop Intelligence</h3>
+<p>A premium agricultural intelligence dashboard combining interactive country mapping, production analysis, growth, yield, trade, supply, concentration, volatility, forecasting, search, filtering and data provenance.</p>
 <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span class="tag">FAOSTAT</span><span class="tag">Data Analytics</span></div>
 <div class="project-buttons">
-<a class="project-link" href="https://github.com/Chandan23344/Global-Crop-Intelligence" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-<a class="project-link" href="https://global-crop-intelligence.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo →</a>
+<a href="https://github.com/Chandan23344/Global-Crop-Intelligence" target="_blank" class="project-link">GitHub ↗</a>
+<a href="https://global-crop-intelligence.onrender.com" target="_blank" class="project-link">Live Demo →</a>
 </div>
 </article>
 
-<!-- 02 -->
-<article class="project featured">
-<div class="project-head"><div class="project-number">02</div><div class="featured-badge">★ FEATURED</div></div>
-<div class="gallery">
-<img src="images/indian-jobs-1.png" alt="Indian Job Market Visualizer dashboard" onclick="openImage(this.src)">
-<img src="images/indian-jobs-2.png" alt="Indian Job Market Visualizer chart" onclick="openImage(this.src)">
-<img src="images/indian-jobs-3.png" alt="Indian Job Market Visualizer analytics" onclick="openImage(this.src)">
+<article class="project">
+<div class="project-number">02</div>
+<div class="project-gallery">
+<a href="images/indian-jobs-1.png" target="_blank"><img src="images/indian-jobs-1.png" alt="Indian Job Market Visualizer screenshot 1"></a>
+<a href="images/indian-jobs-2.png" target="_blank"><img src="images/indian-jobs-2.png" alt="Indian Job Market Visualizer screenshot 2"></a>
+<a href="images/indian-jobs-3.png" target="_blank"><img src="images/indian-jobs-3.png" alt="Indian Job Market Visualizer screenshot 3"></a>
 </div>
-<h3>📊 Indian Job Market Visualizer</h3>
+<h3>Indian Job Market Visualizer</h3>
 <p>An interactive job-market analytics dashboard designed to explore hiring trends, roles, locations, skills and market patterns through data visualization.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">Data Analytics</span><span class="tag">Visualization</span><span class="tag">Dashboard</span><span class="tag">Pandas</span></div>
+<div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Data Analytics</span><span class="tag">Visualization</span><span class="tag">Dashboard</span></div>
 <div class="project-buttons">
-<a class="project-link" href="https://github.com/Chandan23344/indian-job-market-visualizer" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-<a class="project-link" href="https://indian-job-market-visualizer.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo →</a>
+<a href="https://github.com/Chandan23344/indian-job-market-visualizer" target="_blank" class="project-link">GitHub ↗</a>
+<a href="https://indian-job-market-visualizer.onrender.com" target="_blank" class="project-link">Live Demo →</a>
 </div>
 </article>
 
-<!-- 03 -->
 <article class="project">
-<div class="project-head"><div class="project-number">03</div></div>
-<div class="gallery">
-<img src="images/brain-tumor-1.png" alt="Brain Tumor Detection project" onclick="openImage(this.src)">
-<img src="images/brain-tumor-2.png" alt="Brain Tumor Detection model" onclick="openImage(this.src)">
-<img src="images/brain-tumor-3.png" alt="Brain Tumor Detection result" onclick="openImage(this.src)">
+<div class="project-number">03</div>
+<div class="project-gallery">
+<a href="images/brain-tumor-1.png" target="_blank"><img src="images/brain-tumor-1.png" alt="Brain Tumor Detection screenshot 1"></a>
+<a href="images/brain-tumor-2.png" target="_blank"><img src="images/brain-tumor-2.png" alt="Brain Tumor Detection screenshot 2"></a>
+<a href="images/brain-tumor-3.png" target="_blank"><img src="images/brain-tumor-3.png" alt="Brain Tumor Detection screenshot 3"></a>
 </div>
-<h3>🧠 Brain Tumor Detection</h3>
+<h3>Brain Tumor Detection</h3>
 <p>A deep learning project focused on MRI image classification and brain tumor detection using image processing, model training and evaluation.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">OpenCV</span></div>
+<div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">OpenCV</span><span class="tag">Deep Learning</span></div>
 <div class="project-buttons">
-<a class="project-link" href="https://github.com/Chandan23344/Brain-Tumor-Detection-Using-Deep-Learning" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-<a class="project-link" href="https://brain-tumor-detection-using-deep-learning-fn5d.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo →</a>
+<a href="https://github.com/Chandan23344/Brain-Tumor-Detection-Using-Deep-Learning" target="_blank" class="project-link">GitHub ↗</a>
+<a href="https://brain-tumor-detection-using-deep-learning-fn5d.onrender.com" target="_blank" class="project-link">Live Demo →</a>
 </div>
 </article>
 
-<!-- 04 -->
 <article class="project">
-<div class="project-head"><div class="project-number">04</div></div>
-<div class="gallery">
-<img src="images/3d-text-1.png" alt="3D Text Generator project" onclick="openImage(this.src)">
-<img src="images/3d-text-2.png" alt="3D Text Generator interface" onclick="openImage(this.src)">
-<img src="images/3d-text-3.png" alt="3D Text Generator 3D result" onclick="openImage(this.src)">
+<div class="project-number">04</div>
+<div class="project-gallery">
+<a href="images/3d-text-1.png" target="_blank"><img src="images/3d-text-1.png" alt="3D Text Generator screenshot 1"></a>
+<a href="images/3d-text-2.png" target="_blank"><img src="images/3d-text-2.png" alt="3D Text Generator screenshot 2"></a>
+<a href="images/3d-text-3.png" target="_blank"><img src="images/3d-text-3.png" alt="3D Text Generator screenshot 3"></a>
 </div>
-<h3>🧊 3D Text Generator</h3>
-<p>A Python-based application that converts entered text into an interactive 3D model and provides an STL download workflow.</p>
-<div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PyVista</span><span class="tag">Three.js</span></div>
+<h3>3D Text Generator</h3>
+<p>A Python-based application that converts entered text into an interactive 3D model and provides an STL download option.</p>
+<div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PyVista</span><span class="tag">Three.js</span><span class="tag">3D Modeling</span></div>
 <div class="project-buttons">
-<a class="project-link" href="https://github.com/Chandan23344/3D-Text-Generator" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-<a class="project-link" href="https://threed-text-generator.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo →</a>
+<a href="https://github.com/Chandan23344/3D-Text-Generator" target="_blank" class="project-link">GitHub ↗</a>
+<a href="https://threed-text-generator.onrender.com" target="_blank" class="project-link">Live Demo →</a>
 </div>
 </article>
 
-<!-- 05 -->
 <article class="project">
-<div class="project-head"><div class="project-number">05</div></div>
-<div class="gallery">
-<img src="images/concentration-1.png" alt="Real-Time Concentration Monitor" onclick="openImage(this.src)">
-<img src="images/concentration-2.png" alt="Concentration Monitor computer vision" onclick="openImage(this.src)">
-<img src="images/concentration-3.png" alt="Concentration Monitor analysis" onclick="openImage(this.src)">
+<div class="project-number">05</div>
+<div class="project-gallery">
+<a href="images/concentration-1.png" target="_blank"><img src="images/concentration-1.png" alt="Real-Time Concentration Monitor screenshot 1"></a>
+<a href="images/concentration-2.png" target="_blank"><img src="images/concentration-2.png" alt="Real-Time Concentration Monitor screenshot 2"></a>
+<a href="images/concentration-3.png" target="_blank"><img src="images/concentration-3.png" alt="Real-Time Concentration Monitor screenshot 3"></a>
 </div>
-<h3>🎯 Real-Time Concentration Monitor</h3>
-<p>A webcam-based computer vision project that analyzes facial landmarks, eye movement, gaze direction and head pose for real-time concentration monitoring.</p>
+<h3>Real-Time Concentration Monitor</h3>
+<p>A webcam-based computer vision project designed to analyze facial landmarks, eye movement, gaze direction and head pose for real-time concentration monitoring.</p>
 <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">MediaPipe</span><span class="tag">NumPy</span><span class="tag">Computer Vision</span></div>
-<div class="project-buttons"><span class="project-link" style="opacity:.55">GitHub Coming Soon</span><span class="project-link" style="opacity:.55">Demo Coming Soon</span></div>
+<div class="project-buttons">
+<span class="project-link disabled">GitHub Coming Soon</span>
+<span class="project-link disabled">Demo Coming Soon</span>
+</div>
 </article>
 
 </div>
@@ -244,8 +261,108 @@ footer{text-align:center;padding:30px;color:#718096;border-top:1px solid var(--b
 <div class="container">
 <div class="section-title"><small>Education</small><h2>My Academic Journey</h2></div>
 <div class="education">
-<div class="edu-item"><div class="edu-year">2026</div><h3>Master of Computer Applications (MCA)</h3><p>Roorkee Institute of Technology</p></div>
-<div class="edu-item"><div class="edu-year">2024</div><h3>Bachelor of Computer Applications (BCA)</h3><p>VELS University</p></div>
+
+<div class="edu-item">
+<img src="images/sanjay-gandhi-logo.png" alt="Sanjay Gandhi College logo" class="edu-logo">
+<div class="edu-year">2020</div>
+<div class="edu-level">Senior Secondary</div>
+<h3>Higher Secondary Education</h3>
+<p>Class XII</p>
+<p>Sanjay Gandhi College</p>
+<p>Ara, Bhojpur</p>
+</div>
+
+<div class="edu-item">
+<img src="images/vels-logo.png" alt="VELS Institute logo" class="edu-logo">
+<div class="edu-year">2024</div>
+<div class="edu-level">Undergraduate</div>
+<h3>Bachelor of Computer Applications</h3>
+<p>BCA</p>
+<p>VELS Institute of Science, Technology &amp; Advanced Studies</p>
+</div>
+
+<div class="edu-item">
+<img src="images/rit-logo.png" alt="Roorkee Institute of Technology logo" class="edu-logo">
+<div class="edu-year">2026</div>
+<div class="edu-level">Postgraduate</div>
+<h3>Master of Computer Applications</h3>
+<p>MCA</p>
+<p>Roorkee Institute of Technology</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="query">
+<div class="container">
+<div class="section-title"><small>Query</small><h2>Have a Question?</h2></div>
+<div class="query-box">
+<form
+  class="query-form"
+  action="https://formsubmit.co/chandannadhi@gmail.com"
+  method="POST">
+
+  <input type="hidden" name="_subject" value="New Portfolio Query — Chandan Kumar">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="_next" value="https://chandan-kumar-portfolio-6w90.onrender.com/#query">
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label for="queryName">Your Name</label>
+      <input
+        id="queryName"
+        name="name"
+        type="text"
+        placeholder="Enter your name"
+        autocomplete="name"
+        required>
+    </div>
+
+    <div class="form-group">
+      <label for="queryEmail">Your Email</label>
+      <input
+        id="queryEmail"
+        name="email"
+        type="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        required>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="querySubject">Subject</label>
+    <input
+      id="querySubject"
+      name="subject"
+      type="text"
+      placeholder="What would you like to discuss?"
+      required>
+  </div>
+
+  <div class="form-group">
+    <label for="queryMessage">Message</label>
+    <textarea
+      id="queryMessage"
+      name="message"
+      placeholder="Write your query..."
+      required></textarea>
+  </div>
+
+  <button type="submit" class="btn primary">
+    Send Query →
+  </button>
+
+  <div class="query-note">
+    Your message will be submitted securely from this website.
+    No email application is required.
+  </div>
+
+</form>
 </div>
 </div>
 </section>
@@ -255,7 +372,7 @@ footer{text-align:center;padding:30px;color:#718096;border-top:1px solid var(--b
 <div class="contact-box">
 <div class="section-title"><small>Resume</small><h2>Want to know more about my background?</h2></div>
 <p>View my resume for my education, technical skills and project details.</p>
-<div class="socials"><a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn primary">View Resume ↗</a></div>
+<div class="socials"><a href="resume.pdf" target="_blank" class="btn primary">View Resume ↗</a></div>
 </div>
 </div>
 </section>
@@ -263,47 +380,30 @@ footer{text-align:center;padding:30px;color:#718096;border-top:1px solid var(--b
 <section id="contact">
 <div class="container">
 <div class="contact-box">
-<div class="section-title"><small>Query / Contact</small><h2>Have an opportunity or a question?</h2></div>
-<p>Send a message directly from the portfolio. Your email app will open with the message ready to send.</p>
-<form class="query-form" onsubmit="sendQuery(event)">
-<div class="form-row"><input id="qName" required placeholder="Your name"><input id="qEmail" required type="email" placeholder="Your email"></div>
-<input id="qSubject" required placeholder="Subject">
-<textarea id="qMessage" required placeholder="Write your query or message..."></textarea>
-<button class="btn primary" type="submit">Send Query ✉</button>
-<div id="formStatus" class="form-status">Opening your email client…</div>
-</form>
-<div class="socials" style="margin-top:25px">
-<a href="mailto:chandannadhi@gmail.com" class="btn secondary">Email</a>
-<a href="https://www.linkedin.com/in/chandankumar2003/" target="_blank" rel="noopener noreferrer" class="btn secondary">LinkedIn ↗</a>
-<a href="https://github.com/Chandan23344" target="_blank" rel="noopener noreferrer" class="btn secondary">GitHub ↗</a>
-<a href="https://www.instagram.com/chandanraybhumihar/" target="_blank" rel="noopener noreferrer" class="btn secondary">Instagram ↗</a>
+<div class="section-title"><small>Let's Connect</small><h2>Have an opportunity or want to talk?</h2></div>
+<p>I'm open to Data Analyst, Data Analytics and entry-level AI/ML opportunities.</p>
+<div class="socials">
+<a href="mailto:chandannadhi@gmail.com" class="btn primary">Email Me</a>
+<a href="https://www.linkedin.com/in/chandankumar2003/" target="_blank" class="btn secondary">LinkedIn ↗</a>
+<a href="https://github.com/Chandan23344" target="_blank" class="btn secondary">GitHub ↗</a>
 </div>
-<div style="margin-top:22px;color:#718096;font-size:13px">📞 Phone number: Available on request</div>
 </div>
 </div>
 </section>
+
 </main>
 
-<footer>© 2026 Chandan Kumar • Built for a data-driven career.</footer>
-
-<div class="modal" id="imageModal" onclick="closeImage()"><span class="close">×</span><img id="modalImage" alt="Project preview"></div>
+<footer>© 2026 Chandan Kumar • Data Analyst Portfolio</footer>
 
 <script>
-function toggleMenu(){document.getElementById("navLinks").classList.toggle("active")}
-document.querySelectorAll(".nav-links a").forEach(link=>link.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("active")));
-function openImage(src){document.getElementById("modalImage").src=src;document.getElementById("imageModal").classList.add("open")}
-function closeImage(){document.getElementById("imageModal").classList.remove("open")}
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeImage()});
-function sendQuery(e){
- e.preventDefault();
- const name=document.getElementById("qName").value.trim();
- const email=document.getElementById("qEmail").value.trim();
- const subject=document.getElementById("qSubject").value.trim();
- const message=document.getElementById("qMessage").value.trim();
- const body=`Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
- document.getElementById("formStatus").style.display="block";
- window.location.href=`mailto:chandannadhi@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
 }
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("active"));
+});
+
 </script>
+
 </body>
 </html>
